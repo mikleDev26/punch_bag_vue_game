@@ -11,17 +11,17 @@
 
   <div id="vue-app">
     <!-- bag image -->
-    <div id="bag"></div>
+    <div @click="punch" id="bag" v-bind:class="{ burst: ended }"></div>
 
     <!-- bag health -->
     <div id="bag-health">
-      <div> </div>
+      <div :style="{width: health + '%'}"></div>
     </div>
 
     <!-- bag controls -->
     <div id="controls">
-      <button>Punch</button>
-      <button>Restart</button>
+      <!-- <button v-show="!ended" v-on:click="punch">Punch</button> -->
+      <button v-on:click="restart">Restart</button>
     </div>
   </div>
   
